@@ -1,0 +1,212 @@
+<!--
+* Andy Le
+* 000805099
+* Implementation of sudoku game
+* I, Andy Le, 000805099 certify that this material is my original work. No other person's work has been used without due acknowledgement.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sudoku Solver</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body id="myBody">
+	<h1>Sudoku Game</h1>
+	<form id="myForm">
+		<div id="userIn">
+			<label for="name">Full name</label>
+			<input type="text" id="name" name="name">
+			<label for="age">Age</label>
+			<input type="text" id="age" name="age">
+			<label for="colour">Color</label>
+			<input type="color" id="colour" name="colour">
+			<label for="skill">Skill</label>
+			<select id="skill" name="skill">
+				<option value="Beginner">Beginner</option>	
+				<option value="Intermediate">Intermediate</option>	
+				<option value="Advanced">Advanced</option>	
+				<option value="Expert">Expert</option>	
+			</select>
+		</div>
+		<button type="button" id="start">Start</button>
+	</form>	
+	
+	<h1 id="message"></h1>
+	<div id="userOut">
+		<div class="grid">
+			<div class="row">
+				<div class="box">
+					<div class="sub-row">
+						<div id="r1c1" tabindex="1">0</div>
+						<div id="r1c2" tabindex="2">0</div>
+						<div id="r1c3" tabindex="3">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r2c1" tabindex="4">0</div>
+						<div id="r2c2" tabindex="5">0</div>
+						<div id="r2c3" tabindex="6">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r3c1" tabindex="7">0</div>
+						<div id="r3c2" tabindex="8">0</div>
+						<div id="r3c3" tabindex="9">0</div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="sub-row">
+						<div id="r1c4" tabindex="10">0</div>
+						<div id="r1c5" tabindex="11">0</div>
+						<div id="r1c6" tabindex="12">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r2c4" tabindex="13">0</div>
+						<div id="r2c5" tabindex="14">0</div>
+						<div id="r2c6" tabindex="15">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r3c4" tabindex="16">0</div>
+						<div id="r3c5" tabindex="17">0</div>
+						<div id="r3c6" tabindex="18">0</div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="sub-row">
+						<div id="r1c7" tabindex="19">0</div>
+						<div id="r1c8" tabindex="20">0</div>
+						<div id="r1c9" tabindex="21">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r2c7" tabindex="22">0</div>
+						<div id="r2c8" tabindex="23">0</div>
+						<div id="r2c9" tabindex="24">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r3c7" tabindex="25">0</div>
+						<div id="r3c8" tabindex="26">0</div>
+						<div id="r3c9" tabindex="27">0</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="box">
+					<div class="sub-row">
+						<div id="r4c1" tabindex="28">0</div>
+						<div id="r4c2" tabindex="29">0</div>
+						<div id="r4c3" tabindex="30">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r5c1" tabindex="31">0</div>
+						<div id="r5c2" tabindex="32">0</div>
+						<div id="r5c3" tabindex="33">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r6c1" tabindex="34">0</div>
+						<div id="r6c2" tabindex="35">0</div>
+						<div id="r6c3" tabindex="36">0</div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="sub-row">
+						<div id="r4c4" tabindex="37">0</div>
+						<div id="r4c5" tabindex="38">0</div>
+						<div id="r4c6" tabindex="39">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r5c4" tabindex="40">0</div>
+						<div id="r5c5" tabindex="41">0</div>
+						<div id="r5c6" tabindex="42">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r6c4" tabindex="43">0</div>
+						<div id="r6c5" tabindex="44">0</div>
+						<div id="r6c6" tabindex="45">0</div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="sub-row">
+						<div id="r4c7" tabindex="46">0</div>
+						<div id="r4c8" tabindex="47">0</div>
+						<div id="r4c9" tabindex="48">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r5c7" tabindex="49">0</div>
+						<div id="r5c8" tabindex="50">0</div>
+						<div id="r5c9" tabindex="51">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r6c7" tabindex="52">0</div>
+						<div id="r6c8" tabindex="53">0</div>
+						<div id="r6c9" tabindex="54">0</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="box">
+					<div class="sub-row">
+						<div id="r7c1" tabindex="55">0</div>
+						<div id="r7c2" tabindex="56">0</div>
+						<div id="r7c3" tabindex="57">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r8c1" tabindex="58">0</div>
+						<div id="r8c2" tabindex="59">0</div>
+						<div id="r8c3" tabindex="60">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r9c1" tabindex="61">0</div>
+						<div id="r9c2" tabindex="62">0</div>
+						<div id="r9c3" tabindex="63">0</div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="sub-row">
+						<div id="r7c4" tabindex="64">0</div>
+						<div id="r7c5" tabindex="65">0</div>
+						<div id="r7c6" tabindex="66">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r8c4" tabindex="67">0</div>
+						<div id="r8c5" tabindex="68">0</div>
+						<div id="r8c6" tabindex="69">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r9c4" tabindex="70">0</div>
+						<div id="r9c5" tabindex="71">0</div>
+						<div id="r9c6" tabindex="72">0</div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="sub-row">
+						<div id="r7c7" tabindex="73">0</div>
+						<div id="r7c8" tabindex="74">0</div>
+						<div id="r7c9" tabindex="75">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r8c7" tabindex="76">0</div>
+						<div id="r8c8" tabindex="77">0</div>
+						<div id="r8c9" tabindex="78">0</div>
+					</div>
+					<div class="sub-row">
+						<div id="r9c7" tabindex="79">0</div>
+						<div id="r9c8" tabindex="80">0</div>
+						<div id="r9c9" tabindex="81">0</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="myButtons">
+			<button type="button" class="outButs" id="help">Help</button>
+			<button type="button" class="outButs" id="solve">Solve</button>
+			<button type="button" class="outButs" id="reset">Reset</button>
+		</div>
+		<p id="myName"></p>
+		<p id="myAge"></p>
+		<p id="mySkill"></p>
+		<p id="helpText"></p>
+	</div>
+	<script type="text/javascript" src="js/sudoku_solver.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+/*
+* Andy Le
+* 000805099
+* CSS style for sudoku board
+* I, Andy Le, 000805099 certify that this material is my original work. No other person's work has been used without due acknowledgement.
+*/
+#myBody {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: 'Noto Sans', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #FFDFD3
+}
+
+#myForm {
+	border: 1px solid black;
+	border-radius: 25px;
+	background-color: #FFB7B2;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+#start {
+	margin: 10px;
+	width: 100px;
+	padding: 10px;
+	border-radius: 10px;
+	align-self: center;
+	background-color: #9AB7D3
+}
+
+#userIn {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+label, input, select {
+	margin: 5px;
+}
+
+#userOut {
+	display: none;
+}
+
+.grid {
+	border: 2px solid black;
+}
+
+.row {
+	display: flex;
+}
+
+.box {
+	display: flex;
+	flex-direction: column;
+	border: 1.5px solid black;
+}
+
+.sub-row {
+	display: flex;
+}
+
+.sub-row div {
+	background-color: white;
+	margin: 0px;
+	border: 1.5px solid black;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sub-row div:focus {
+	background-color: #80CEE1;
+}
+
+.myButtons {
+	display: flex;
+	justify-content: center;
+}
+
+.outButs {
+	border-radius: 10px;
+	padding: 10px;
+	margin: 10px;
+	background-color: #FEC8D8;
+}

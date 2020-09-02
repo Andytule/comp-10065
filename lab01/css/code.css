@@ -1,0 +1,35 @@
+/*
+* Andy Le
+* 000805099
+* Implementation of user menu
+* I, Andy Le, 000805099 certify that this material is my original work. No other person's work has been used without due acknowledgement.
+*/
+body {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: 'Noto Sans', sans-serif;
+	background-color: #FFBFA3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+table {
+	border-collapse: collapse;
+	background-color: #5E96AE;
+	color: #B2EBE0;
+	border-radius: 25px;
+}
+
+th {
+	padding: 15px;
+}
+
+td {
+	border-top: 1px solid black;
+	padding: 15px;
+}
+
+

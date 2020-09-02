@@ -1,0 +1,58 @@
+/*
+* Andy Le
+* 000805099
+* Implementation of user menu
+* I, Andy Le, 000805099 certify that this material is my original work. No other person's work has been used without due acknowledgement.
+*/
+body {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	text-decoration: none;
+	font-family: 'Noto Sans', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #FFBFA3;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+.level {
+	display: flex;
+}
+
+.appointment {
+	border: 2px solid black;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 20px;
+	margin: 20px;
+	background-color: #5E96AE;
+	border-radius: 25px;
+	color: #B2EBE0;
+}
+
+.appointment h2 {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+label, input, select, textarea {
+	padding: 5px;
+	margin: 5px;
+}
+
+#submit {
+	width: 200px;
+	height: 40px;
+	align-self: center;
+	border-radius: 25px;
+	color: #5E96AE;
+	background-color: #B2EBE0;
+	font-size: 20px;
+}	
+
